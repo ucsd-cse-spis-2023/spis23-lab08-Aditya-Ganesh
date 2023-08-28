@@ -3,8 +3,8 @@ from flask import render_template
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
-   return 'Hello World!'
+def render_home():
+   return return_template('home.html')
 
 def ftoc(ftemp):
    return (ftemp - 32.0) * (5.0 / 9.0)
