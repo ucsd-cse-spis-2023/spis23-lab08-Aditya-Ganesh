@@ -6,4 +6,7 @@ Our custom function adds two numbers. It can be accessed here: https://vigilant-
 
 # 5
 Link to Hello World app: https://github.com/adityakakarla/spis23-Aditya-Ganesh
-Link to Render link: https://spis23-aditya-ganesh.onrender.com
+Link to Render: https://spis23-aditya-ganesh.onrender.com
+
+# 6
+Link to Render: https://spis23-lab08-aditya-ganesh.onrender.com
