@@ -59,7 +59,7 @@ def render_addtwo_result():
       b = float(request.args["num2"])
       return str(a + b)
    except ValueError:
-      return "you dumbfuck"
+      return "Sorry, there was an error"
 
 def ftoc(ftemp):
    return (ftemp - 32.0) * (5.0 / 9.0)
