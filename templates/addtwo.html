@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}Convert addtwo{% endblock %}
+
+{% block content %}
+
+<p>Enter 2 numbers and click "sumbit" to add 2 numbers</p>
+
+<form action="/addtwo_result">
+    <p>First number: <input type="number" name="num1" value="0.0"></p>
+    <p>Second number: <input type="number" name="num2" value="0.0"></p>
+    
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

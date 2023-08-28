@@ -1,10 +1,65 @@
 from flask import Flask
 from flask import render_template
+from flask import request
 app = Flask(__name__)
 
 @app.route('/')
 def render_home():
-   return return_template('home.html')
+   return render_template('home.html')
+
+@app.route('/ctof')
+def render_ctof():
+    return render_template('ctof.html')
+
+@app.route("/ctof_result")
+def render_ctof_result():
+   try:
+      ctemp_result = float(request.args["ctemp"])
+      ftemp_result = ctof(ctemp_result)
+      return render_template("ctof_result.html", ctemp = ctemp_result, ftemp = ftemp_result)
+   except ValueError:
+      return "Sorry: Something went wrong."
+
+@app.route('/ftoc')
+def render_ftoc():
+    return render_template('ftoc.html')
+
+@app.route('/ftoc_result')
+def render_ftoc_result():
+    try:
+        ftemp_result = float(request.args['ftemp'])
+        ctemp_result = ftoc(ftemp_result)
+        return render_template('ftoc_result.html',
+                              ftemp=ftemp_result, 
+                              ctemp=ctemp_result)
+    except ValueError:
+        return "Sorry: something went wrong."
+
+@app.route('/mtokm')
+def render_mtokm():
+   return render_template('mtokm.html')
+
+@app.route('/mtokm_result')
+def render_mtokm_result():
+   try:
+      miles_result = float(request.args["miles_count"])
+      kilometers_result = miles_to_km(miles_result)
+      return render_template('mtokm_result.html',miles=miles_result, kilometers=kilometers_result)
+   except ValueError:
+      return "Sorry: something went wrong."
+   
+@app.route("/addtwo")
+def render_addtwo():
+   return render_template("addtwo.html")
+
+@app.route("/addtwo_result")
+def render_addtwo_result():
+   try:
+      a = float(request.args["num1"])
+      b = float(request.args["num2"])
+      return str(a + b)
+   except ValueError:
+      return "you dumbfuck"
 
 def ftoc(ftemp):
    return (ftemp - 32.0) * (5.0 / 9.0)
