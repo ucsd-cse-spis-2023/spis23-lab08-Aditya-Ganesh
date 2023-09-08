@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Steps{% endblock %}
+
+{% block content %}
+
+<ol>
+    <li><font size="+2">We found a Yolov5 model online but used the untrained version so we can input our own datasets</font></li>
+    <img src="/static/Step1.png" alt="Step1" width="700" height="333">
+    <li><font size="+2">We installed the necessary requirements to Google Colab and implemented our own dataset of 800 images. We got the images by running a python script on VsCode that took a picture every 2 seconds. To train the computer, we used Roboflow to draw squares over the picture of the phones so the computer could understand.</font></li>
+    <img src="/static/Step2.png" alt="Step2" width="700" height="333">
+    <li><font size="+2">We trained the model using a convolutional neural network</font></li>
+    <img src="/static/Step3.png" alt="Step3" width="700" height="333">
+    <li><font size="+2">We evaluated the performance of the detector for the computer keep improving after each interation of classifying the images.</font></li>
+    <img src="/static/Step4.png" alt="Step4" width="700" height="333">
+</ol>
+
+{% endblock %}
